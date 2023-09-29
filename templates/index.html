@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Additional custom styles can be added here */
+        body {
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Feature and FAQ styles */
+        .feature-list, .faq-list {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">YouTube Video Downloader</h1>
+        <form action="/download" method="POST">
+            <div class="form-group">
+                <label for="video_url">Video URL:</label>
+                <input type="text" class="form-control" name="video_url" id="video_url" placeholder="Enter YouTube video URL" required>
+            </div>
+
+            <div class="form-group">
+                <label for="quality">Select Quality:</label>
+                <select class="form-control" name="quality" id="quality">
+                    <option value="Auto">Auto</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Download Type:</label>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="download_type" id="download_type_video" value="video" checked>
+                    <label class="form-check-label" for="download_type_video">Video</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" name="download_type" id="download_type_audio" value="audio">
+                    <label class="form-check-label" for="download_type_audio">Audio</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Download</button>
+        </form>
+
+        <h2>Features:</h2>
+        <ul class="feature-list">
+            <li>Download YouTube videos in various qualities.</li>
+            <li>Convert videos to audio format (MP3).</li>
+            <li>User-friendly interface for easy navigation.</li>
+            <li>Fast and reliable downloads.</li>
+        </ul>
+
+        <h2>How to Use:</h2>
+        <ol class="feature-list">
+            <li>Copy the URL of the YouTube video you want to download.</li>
+            <li>Paste the URL in the "Video URL" field above.</li>
+            <li>Select your preferred quality and download type (Video or Audio).</li>
+            <li>Click the "Download" button to start the process.</li>
+        </ol>
+
+        <h2>FAQ:</h2>
+        <ul class="faq-list">
+            <li>
+                <strong>Q: Is this service free to use?</strong><br>
+                A: Yes, our YouTube downloader is completely free to use.
+            </li>
+            <li>
+                <strong>Q: Can I download copyrighted content?</strong><br>
+                A: We do not endorse downloading copyrighted material without permission from the content owner. Please use this service responsibly and follow YouTube's terms of service.
+            </li>
+            <li>
+                <strong>Q: Why do I see ads or pop-ups when using this service?</strong><br>
+                A: We rely on ads to support our free service. You may encounter ads or pop-ups during the download process.
+            </li>
+        </ul>
+        
+        <p class="result mt-3">
+            <!-- Result message will be displayed here -->
+        </p>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
